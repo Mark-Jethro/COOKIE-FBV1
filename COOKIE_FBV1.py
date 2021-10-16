@@ -8,7 +8,7 @@ def logo():os.system('clear');run('\n  \x1b[1;97m - Copyright By : Huỳnh Mai N
 def main():
 	E='c_user';C=True;logo();F=input('\n\x1b[1;92m[+] Account Facebook : ');G=input('\n\x1b[1;92m[+] Password Facebook : ');A=input('\n\x1b[1;92m[+] User-Agent : ')
 	if A=='':sys.exit()
-	elif'Android'in A:H=re.findall('Mozilla([^"]*)Chrome/',A)[0];A='Mozilla'+H+'Chrome/'+'69.0.3497.86'+' Mobile Safari/537.36'
+	elif'Android'in A:H=re.findall('Mozilla([^"]*)Chrome/',A)[0];A='Mozilla'+H+'Chrome'+' Mobile Safari/537.36'
 	elif'iPhone'in A:A='Mozilla/6.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/8.0 Mobile/10A5376e Safari/8536.25'
 	else:sys.exit()
 	browser.addheaders=[('User-Agent',A)];browser.set_handle_equiv(C);browser.set_handle_gzip(C);browser.set_handle_redirect(C);browser.set_handle_referer(C);browser.set_handle_robots(False);D=mechanize.CookieJar();browser.set_cookiejar(D);I='https://www.facebook.com/login.php';browser.open(I);browser._factory.is_html=C;browser.select_form(nr=0);browser.form['email']=F;browser.form['pass']=G;browser.submit();B=requests.utils.dict_from_cookiejar(D)
